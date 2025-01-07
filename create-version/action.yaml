@@ -5,9 +5,6 @@ branding:
   icon: loader
   color: purple
 inputs:
-  app-id:
-    description: 'The ID of the app'
-    required: true
   version:
     description: 'The version to be created'
     required: true
@@ -15,6 +12,9 @@ inputs:
     description: 'The URL of the Stork API'
     default: 'https://stork.erickzanardoo.workers.dev'
 secrets:
+  app-id:
+    description: 'The ID of the app'
+    required: true
   api-key:
     description: 'The API key to authenticate with the Stork API'
     required: true
