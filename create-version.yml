@@ -1,0 +1,29 @@
+name: Stork Create Version
+description: Creates a new version for a given app in the Stork platform.
+author: Erick Zanardo
+branding:
+  icon: loader
+  color: purple
+inputs:
+  api-key:
+    description: 'The API key to authenticate with the Stork API'
+    required: true
+  app-id:
+    description: 'The ID of the app'
+    required: true
+  version:
+    description: 'The version to be created'
+    required: true
+  stork-url:
+    description: 'The URL of the Stork API'
+    default: 'https://stork.erickzanardoo.workers.dev'
+
+runs:
+  using: composite
+  steps:
+    - run: |
+      curl -X POST \
+      -H "Authorization: Bearer ${{ inputs.api-key }}" \
+      -H "Content-Type: application/json" \
+      -d "{\"versionName\": \"{{ inputs.version }}"}" \
+      {{ inputs.stork-url }}v1/admin/apps/${{ inputs.app-id }}/versions
