@@ -4,6 +4,7 @@ author: Erick Zanardo
 branding:
   icon: loader
   color: purple
+
 inputs:
   version:
     description: 'The version to be created'
@@ -22,7 +23,9 @@ secrets:
 runs:
   using: composite
   steps:
-    - run: |
+    - name: Create Version
+      shell: bash
+      run: |
         curl -X POST \
           -H "Authorization: Bearer ${{ inputs.api-key }}" \
           -H "Content-Type: application/json" \
