@@ -23,8 +23,8 @@ runs:
   using: composite
   steps:
     - run: |
-      curl -X POST \
-      -H "Authorization: Bearer ${{ inputs.api-key }}" \
-      -H "Content-Type: application/json" \
-      -d "{\"versionName\": \"{{ inputs.version }}"}" \
-      {{ inputs.stork-url }}v1/admin/apps/${{ inputs.app-id }}/versions
+        curl -X POST \
+          -H "Authorization: Bearer ${{ inputs.api-key }}" \
+          -H "Content-Type: application/json" \
+          -d "{\"versionName\": \"{{ inputs.version }}"}" \
+          {{ inputs.stork-url }}v1/admin/apps/${{ inputs.app-id }}/versions
