@@ -12,7 +12,6 @@ inputs:
   stork-url:
     description: 'The URL of the Stork API'
     default: 'https://stork.erickzanardoo.workers.dev'
-secrets:
   app-id:
     description: 'The ID of the app'
     required: true
