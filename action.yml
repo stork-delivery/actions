@@ -28,5 +28,5 @@ runs:
         curl -X POST \
           -H "Authorization: Bearer ${{ inputs.api-key }}" \
           -H "Content-Type: application/json" \
-          -d "{\"versionName\": \"{{ inputs.version }}\"}" \
+          -d "{\"versionName\": \"${{ inputs.version }}\"}" \
           ${{ inputs.stork-url }}/v1/admin/apps/${{ inputs.app-id }}/versions
