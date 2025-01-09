@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: stork-delivery/create_version@main
         with:
-          version: ${{ github.ref }}
+          version: ${{ github.ref_name }}
           app-id: ${{ secrets.STORK_APP_ID }}
           api-key: ${{ secrets.STORK_API_KEY }}
 ```
